@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap");
+.signup .card-header:first-child {
+  border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0;
+}
+.signup .card-header {
+  position: relative;
+  padding: 2rem 2rem;
+  border-bottom: none;
+  background-color: white;
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+  z-index: 2;
+}
+.signup .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+  border-radius: 1rem;
+}
+.signup .bg-gray-100 {
+  background-color: #f8f9fa !important;
+}
+/* body {
+  font-family: "Roboto" !important;
+} */
+.signup .text-primary {
+  color: #4650dd !important;
+}
+.signup h1,
+.signup .h1,
+.signup h2,
+.signup .h2,
+.signup h3,
+.signup .h3,
+.signup h4,
+.signup .h4,
+.signup h5,
+.signup .h5,
+.signup h6,
+.signup .h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+.signup .text-muted {
+  color: #6c757d !important;
+}
+.signup .lead {
+  font-size: 1.125rem;
+  font-weight: 300;
+}
+.signup .text-sm {
+  font-size: 0.7875rem !important;
+}
+.signup h3,
+.signup .h3 {
+  font-size: 1.575rem;
+}
+.signup .hide {
+  display: none;
+}
+.signup a {
+  color: #4650dd !important;
+  text-decoration: underline !important;
+  cursor: pointer;
+}

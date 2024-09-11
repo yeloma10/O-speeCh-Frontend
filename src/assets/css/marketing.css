@@ -1,0 +1,59 @@
+.tts-container {
+  padding: 20px;
+  max-width: 600px;
+  margin-top: 50%;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tts-container h2 {
+  text-align: center;
+  color: #333;
+}
+
+.tts-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.tts-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.tts-form textarea,
+.tts-form select,
+.tts-form button,
+.tts-form input[type="file"] {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.tts-form textarea {
+  width: 100%;
+  height: 100px;
+  resize: vertical;
+}
+
+.tts-form select {
+  width: 100%;
+}
+
+/* .tts-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tts-form button:hover {
+  background-color: #0056b3;
+} */

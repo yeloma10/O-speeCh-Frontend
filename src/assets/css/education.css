@@ -1,0 +1,173 @@
+.Education {
+  width: 100%;
+  height: auto;
+}
+
+.Education .container h1 span {
+  align-items: center;
+  color: #ff2963;
+}
+
+.Education textarea {
+  width: 100%;
+  height: 300px;
+  background: #60c083;
+  color: #fff;
+  font-size: 15px;
+  border: 0;
+  outline: 0;
+  /* padding: 20px; */
+  border-radius: 10px;
+  resize: none;
+  /* margin-bottom: 30px; */
+}
+
+.Education textarea::placeholder {
+  font-size: 16px;
+  color: #ddd;
+}
+
+.Education .container:nth-child(1) {
+  width: 80%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Education .speech-parameters {
+  margin-bottom: 20px;
+}
+
+.Education .word-count {
+  font-size: 1.2em;
+}
+
+.Education .separation-line {
+  margin: 0 10px;
+}
+
+.Education .input-group {
+  display: flex;
+  align-items: center;
+}
+
+.Education .input-group-text {
+  background-color: #ddd;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+}
+
+.Education .custom-range {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.Education .form-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.Education .btn {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.Education .btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.Education .btn-success:hover {
+  background-color: #218838;
+}
+
+.Education .btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.Education .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.Education .btn-info {
+  background-color: #218838;
+  color: #fff;
+}
+
+.Education .btn-info:hover {
+  background-color: #138496;
+}
+
+.Education #pdfUpload {
+  margin-top: 10px;
+}
+
+.Education #speech-speed-text {
+  margin-left: 10px;
+}
+
+.Education .tts-container {
+  padding: 20px;
+  max-width: 600px;
+  margin-top: 50%;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Education .tts-container h2 {
+  text-align: center;
+  color: #333;
+}
+
+.Education .tts-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Education .tts-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.Education .tts-form textarea,
+.Education .tts-form select,
+.Education .tts-form button,
+.Education .tts-form input[type="file"] {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.Education .tts-form textarea {
+  width: 100%;
+  height: 100px;
+  resize: vertical;
+}
+
+.Education .tts-form select {
+  width: 100%;
+}
+
+.Education .tts-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Education .tts-form button:hover {
+  background-color: #0056b3;
+}
