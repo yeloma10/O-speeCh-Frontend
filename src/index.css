@@ -2088,17 +2088,13 @@ h6 {
   font-size: 18px;
 }
 
-.team .member .member-info span {
+.team .member .member-info button {
+  text-align: center;
   font-style: italic;
   display: block;
   font-size: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  margin-bottom: 10px;
-}
-
-.team .member .member-info p {
-  margin-bottom: 0;
-  font-size: 14px;
+  color: blue;
+  margin: 0 auto 10px;
 }
 
 .team .member:hover .member-img .social {

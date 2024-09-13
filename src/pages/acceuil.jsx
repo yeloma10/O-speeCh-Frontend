@@ -5,10 +5,9 @@ import aboutCompany1 from "../assets/img/about-company-1.jpg";
 import aboutCompany2 from "../assets/img/about-company-2.jpg";
 import aboutCompany3 from "../assets/img/about-company-3.jpg";
 import teamMember1 from "../assets/img/hero-bg-light.webp";
-import profileYeloma from "../assets/img/profile/Yeloma.webp";
-import profileDiara from "../assets/img/profile/diara.webp";
-import profileSekongo from "../assets/img/profile/sekongo.webp";
-import wolle from "../assets/img/profile/wolle.webp";
+import profileupb from "../assets/img/profile/upb.webp";
+import profilegrowing from "../assets/img/profile/growing.webp";
+import profileproactive from "../assets/img/profile/proactive.webp";
 import Footer from "../components/Footer.jsx";
 import Header from "../components/Header.jsx";
 import useAuthStore from "../utils/userStore.jsx";
@@ -113,7 +112,7 @@ function Acceuil() {
                   </div>
                   <div>
                     <h4 className="title">
-                      <a href="#" className="stretched-link">
+                      <a href="/detail_mark" className="stretched-link">
                         <strong>Marketing Numérique</strong>
                       </a>
                     </h4>
@@ -137,7 +136,7 @@ function Acceuil() {
                   </div>
                   <div>
                     <h4 className="title">
-                      <a href="#" className="stretched-link">
+                      <a href="/detail_educ" className="stretched-link">
                         <strong>Éducation en Ligne</strong>
                       </a>
                     </h4>
@@ -387,11 +386,11 @@ function Acceuil() {
         <section id="team" className="team section">
           {/* Section Title */}
           <div className="container section-title" data-aos="fade-up">
-            <h2>Équipe</h2>
+            <h2>Nos Partenaires</h2>
             <p>
-              Notre équipe de développeurs full-stack passionnés travaille sans
-              relâche pour créer les meilleures solutions de conversion de texte
-              en discours utilisant des techniques d'IA avancées.
+            Nous avons le plaisir de collaborer avec des partenaires de premier plan tels que 
+            l’Université Polytechnique de Bingerville, Proactive Swiss et Growing Consulting. 
+            Leur expertise et leur soutien jouent un rôle clé dans le succès de nos projets.
             </p>
           </div>
           {/* End Section Title */}
@@ -404,18 +403,24 @@ function Acceuil() {
               >
                 <div className="member-img relative overflow-hidden rounded-full w-36 h-36 mx-auto mb-4">
                   <img
-                    src={profileYeloma}
+                    src={profileupb}
                     className="w-full h-full object-cover"
-                    alt="Yéo Maïmouna"
+                    alt="Université Polytechnique de Bingerville"
                   />
                 </div>
                 <div className="member-info text-center">
-                  <h4 className="text-xl font-semibold">Yéo Maïmouna</h4>
-                  <span className="text-gray-500">Full-Stack Developer</span>
-                  <p className="mt-2 text-sm">
-                    Yéo Maïmouna crée des solutions complètes en combinant ses
-                    compétences en développement front-end et back-end.
-                  </p>
+                  <h4 className="text-xl font-semibold">Université Polytechnique de Bingerville</h4>
+                  <Link 
+                    to="https:/upb.ci" 
+                     className="text-gray-500 bg-transparent border-none cursor-pointer inline-block"
+                      >
+                    <button
+                      className="text-gray-500 bg-transparent border-none cursor-pointer"
+                      >
+                      Voir plus..
+                      </button>
+                      </Link>
+                
                 </div>
               </div>
 
@@ -426,19 +431,24 @@ function Acceuil() {
               >
                 <div className="member-img relative overflow-hidden rounded-full w-36 h-36 mx-auto mb-4">
                   <img
-                    src={profileDiara}
+                    src={profilegrowing}
                     className="w-full h-full object-cover"
-                    alt="Diarassouba Mamadou"
+                    alt="Growing Consulting"
                   />
                 </div>
                 <div className="member-info text-center">
-                  <h4 className="text-xl font-semibold">Diarassouba Mamadou</h4>
-                  <span className="text-gray-500">Full-Stack Developer</span>
-                  <p className="mt-2 text-sm">
-                    Diarassouba Mamadou est responsable de développer et
-                    maintenir notre infrastructure, garantissant des
-                    performances optimales.
-                  </p>
+                  <h4 className="text-xl font-semibold">Growing Consulting</h4>
+                  <Link 
+                    to="https://www.growingconsulting-africa.com" 
+                     className="text-gray-500 bg-transparent border-none cursor-pointer inline-block"
+                      >
+                    <button
+                      className="text-gray-500 bg-transparent border-none cursor-pointer"
+                      >
+                      Voir plus..
+                      </button>
+                      </Link>
+                  
                 </div>
               </div>
 
@@ -449,44 +459,27 @@ function Acceuil() {
               >
                 <div className="member-img relative overflow-hidden rounded-full w-36 h-36 mx-auto mb-4">
                   <img
-                    src={profileSekongo}
+                    src={profileproactive}
                     className="w-full h-full object-cover"
-                    alt="Sekongo Ismael"
+                    alt="Proactive Swiss"
                   />
                 </div>
                 <div className="member-info text-center">
-                  <h4 className="text-xl font-semibold">Sekongo Ismael</h4>
-                  <span className="text-gray-500">Full-Stack Developer</span>
-                  <p className="mt-2 text-sm">
-                    Sekongo Ismael combine ses compétences en front-end et
-                    back-end pour développer des solutions complètes et
-                    efficaces.
-                  </p>
+                  <h4 className="text-xl font-semibold">Proactive Swiss</h4>
+                  <Link 
+                    to="https://www.proactive.swiss" 
+                     className="text-gray-500 bg-transparent border-none cursor-pointer inline-block"
+                      >
+                    <button
+                      className="text-gray-500 bg-transparent border-none cursor-pointer"
+                      >
+                      Voir plus..
+                      </button>
+                      </Link>
                 </div>
               </div>
 
-              <div
-                className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 member"
-                data-aos="fade-up"
-                data-aos-delay="500"
-              >
-                <div className="member-img relative overflow-hidden rounded-full w-36 h-36 mx-auto mb-4">
-                  <img
-                    src={wolle}
-                    className="w-full h-full object-cover"
-                    alt="Wolle Arnaud"
-                  />
-                </div>
-                <div className="member-info text-center">
-                  <h4 className="text-xl font-semibold">Wolle Arnaud</h4>
-                  <span className="text-gray-500">Full-Stack Developer</span>
-                  <p className="mt-2 text-sm">
-                    Wolle Arnaud assure le déploiement et la maintenance de
-                    notre infrastructure, garantissant une continuité de service
-                    sans faille.
-                  </p>
-                </div>
-              </div>
+             
             </div>
           </div>
         </section>

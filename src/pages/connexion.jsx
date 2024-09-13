@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import "./../assets/css/inscription.css";
 import fetchAPI from "./../utils/API.jsx";
 import useAuthStore from "./../utils/userStore.jsx";
@@ -41,6 +42,16 @@ function Connexion() {
   } = useForm({
     resolver: zodResolver(LoginSchema),
   });
+
+  const handleGoogleSuccess = (response) => {
+    console.log('Google Auth Success:', response);
+    // Vous pouvez ici envoyer le token Google au backend pour validation et authentification
+  };
+
+  const handleGoogleError = (error) => {
+    console.error('Google Auth Error:', error);
+    // Gestion des erreurs
+  };
 
   const onSubmit = async (data) => {
     try {
@@ -182,6 +193,15 @@ function Connexion() {
                       S'inscrire
                     </Link>
                   </p>
+                </div>
+                <div>
+      
+                  <GoogleLogin
+                  onSuccess={handleGoogleSuccess}
+                  onError={handleGoogleError}
+                  theme="filled_blue"
+                  size="large"
+                  />
                 </div>
               </form>
             </div>

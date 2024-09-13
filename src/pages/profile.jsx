@@ -1,19 +1,45 @@
 import { jwtDecode } from "jwt-decode";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import DialogConfirm from "../components/Dialog.jsx";
 import fetchApi from "../utils/API.jsx";
 import useAuthStore from "../utils/userStore";
+
 const Profile = () => {
   const navigate = useNavigate();
   const { user, logout, isLoggedIn, setIsLoading, setUser } = useAuthStore(
     (state) => state
   );
-  const [dialogOpen, setDialogOpen] = React.useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [resetPasswordDialogOpen, setResetPasswordDialogOpen] = useState(false);
+  const [resetPasswordEmail, setResetPasswordEmail] = useState("");
+  const [resetPasswordMessage, setResetPasswordMessage] = useState("");
 
   const handleLogout = () => {
     logout();
     navigate("/");
+  };
+
+  const handleResetPassword = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetchApi(
+        `account/reset-password`,
+        {
+          method: "POST",
+          body: JSON.stringify({ email: resetPasswordEmail }),
+          headers: { "Content-Type": "application/json" },
+        },
+        true
+      );
+      setResetPasswordMessage("Un e-mail de réinitialisation a été envoyé.");
+    } catch (error) {
+      console.error("Failed to send reset password email", error);
+      setResetPasswordMessage("Échec de l'envoi de l'e-mail de réinitialisation.");
+    } finally {
+      setIsLoading(false);
+      setResetPasswordDialogOpen(false);
+    }
   };
 
   useEffect(() => {
@@ -64,7 +90,7 @@ const Profile = () => {
               onClick={() => setDialogOpen(true)}
               className="text-white py-2 px-4 uppercase rounded bg-gray-400 hover:bg-gray-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
             >
-              Deconnexion
+              Déconnexion
             </button>
             <Link to="/choix">
               <button className="text-white py-2 px-4 uppercase rounded bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
@@ -77,17 +103,41 @@ const Profile = () => {
           <div>
             <h1 className="text-4xl font-medium text-gray-700">
               {user?.first_name} {user?.last_name}
-              <span className="font-light text-gray-500"></span>
             </h1>
             <p className="mt-3 font-light text-gray-600">{user?.email}</p>
+            <button
+              onClick={() => setResetPasswordDialogOpen(true)}
+              className="mt-4 text-blue-500 hover:text-blue-700 font-medium"
+            >
+             Réinitialiser le mot de passe
+            </button>
           </div>
         </div>
       </div>
+
       <DialogConfirm
         isOpen={dialogOpen}
         onClose={() => setDialogOpen(false)}
         onConfirm={handleLogout}
         message="Êtes-vous sûr de vouloir vous déconnecter ?"
+      />
+      <DialogConfirm
+        isOpen={resetPasswordDialogOpen}
+        onClose={() => setResetPasswordDialogOpen(false)}
+        onConfirm={handleResetPassword}
+        message={
+          <div>
+            <input
+              type="email"
+              value={resetPasswordEmail}
+              onChange={(e) => setResetPasswordEmail(e.target.value)}
+              placeholder="Votre e-mail"
+              className="border p-2 rounded mb-2 w-full"
+            />
+            <p className="text-gray-700">{resetPasswordMessage}</p>
+          </div>
+        }
+        confirmButtonText="Envoyer l'e-mail"
       />
     </div>
   );
