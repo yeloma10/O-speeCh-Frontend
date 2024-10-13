@@ -1,3 +1,4 @@
+import { GoogleOAuthProvider } from "@react-oauth/google";
 import "aos/dist/aos.css";
 import "glightbox/dist/css/glightbox.css";
 import { useEffect } from "react";
@@ -5,7 +6,6 @@ import { Route, Routes } from "react-router-dom";
 import Acceuil from "./pages/acceuil.jsx";
 import Choix from "./pages/choix.jsx";
 import Connexion from "./pages/connexion.jsx";
-import { GoogleOAuthProvider } from '@react-oauth/google';
 import Education from "./pages/education.jsx";
 import Inscription from "./pages/inscription.jsx";
 import Marketing from "./pages/marketing.jsx";
@@ -23,6 +23,8 @@ import {
   initializeMobileNavToggle,
   initializeScrollTopButton,
 } from "./assets/js/main.js";
+import AdminDashboard from "./pages/admin-dashboard.jsx";
+import AdminLogin from "./pages/admin-login.jsx";
 
 function App() {
   useEffect(() => {
@@ -49,7 +51,6 @@ function App() {
   }, []);
 
   return (
-    
     <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
       <Routes>
         <Route path="/" Component={Acceuil} />
@@ -62,9 +63,10 @@ function App() {
         <Route path="/choix" Component={Choix} />
         <Route path="/profile" Component={Profile} />
         <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
-    
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
       </Routes>
-      </GoogleOAuthProvider>
+    </GoogleOAuthProvider>
   );
 }
 

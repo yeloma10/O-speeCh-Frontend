@@ -4,6 +4,7 @@ import { BASE_URL } from "./url";
 
 const fetchApi = async (endpoint, options = {}, besoinAuth = false) => {
   const accessToken = localStorage.getItem("accessToken") || "";
+  //eslint-disable-next-line
   const refreshToken = localStorage.getItem("refreshToken") || "";
 
   const headersParDefaut = {
@@ -22,7 +23,7 @@ const fetchApi = async (endpoint, options = {}, besoinAuth = false) => {
     ...options,
     headers,
   });
-  console.log("response", response);
+  // console.log("response", response);
   const data = await response.json();
   if (!response.ok) {
     return {
